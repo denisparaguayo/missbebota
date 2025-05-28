@@ -6,23 +6,24 @@ import { Image } from 'astro:assets'; // Para optimización de imágenes en Astr
 
 // Importa las imágenes para la sección CTA y Eventos
 import ctaImage from '../assets/images/miss-bebota-6.jpg'; // Imagen para la CTA
-import eventImage1 from '../assets/images/pexels-minan1398-1003994.jpg'; // Imagen para el evento 1
-import eventImage2 from '../assets/images/pexels-minan1398-1003994.jpg'; // Imagen para el evento 2
-import eventImage3 from '../assets/images/pexels-minan1398-1003994.jpg';
-import baner from '../assets/images/baner.jpg';
+import eventImage1 from 'public/images/inscribite.jpg'; // Imagen para el evento 1
+import eventImage2 from 'public/images/ensayo.jpeg'; // Imagen para el evento 2
+import eventImage3 from 'public/images/gala.jpeg'; // Imagen para el evento 3
+import baner from 'public/images/baner.png';
 import Section from '~/components/Section.astro';
 
 // Datos para la sección de próximos eventos
 const eventos = [
 	{
-		id: 'gala-presentacion',
-		title: 'Gala de Presentación de Candidatas',
-		date: '15 de Julio de 2025',
-		time: '19:00 hs',
-		image: eventImage1,
-		alt: 'Candidatas de Miss Bebota en el escenario',
-		link: '/eventos/gala-presentacion', // Enlace a la página de detalles del evento
+		id: 'inscripciones',
+		title: 'Apertura de Inscripciones',
+		date: '1 de Junio de 2025',
+		time: '08:00 hs',
+		image: eventImage1, // asegurate de tener esta imagen importada
+		alt: 'Formulario de inscripción a Miss Bebota Paraguay',
+		link: '/inscripciones', // enlace a la página de detalles del evento
 	},
+
 	{
 		id: 'ensayo-general',
 		title: 'Ensayo General y Sesión de Fotos',
@@ -30,7 +31,7 @@ const eventos = [
 		time: '14:00 hs',
 		image: eventImage2,
 		alt: 'Niñas practicando en el escenario de Miss Bebota',
-		link: '/eventos/ensayo-general',
+		link: '#',
 	},
 	{
 		id: 'gran-final',
@@ -39,7 +40,7 @@ const eventos = [
 		time: '20:00 hs',
 		image: eventImage3,
 		alt: 'Coronación de Miss Bebota Paraguay',
-		link: '/eventos/gran-final',
+		link: '#',
 	},
 ];
 ---
@@ -62,6 +63,8 @@ const eventos = [
 			</div>
 		</Section>
 
+		<section></section>
+
 		<section class="py-16 px-6 md:px-12 lg:px-20 text-center">
 			<div
 				class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -74,22 +77,15 @@ const eventos = [
 					<p
 						class="text-lg lg:text-xl leading-relaxed mb-8"
 						style="color: #4A4A4A;">
-						Si tienes entre 4 y 12 años y sueñas con ser la próxima Miss Bebota
-						Paraguay, ¡esta es tu oportunidad! Vive una experiencia inolvidable,
-						haz nuevas amigas y deslumbra en el escenario. Te esperamos para que
-						formes parte de nuestra gran familia.
+						¿Siempre soñaste con subirte al escenario? Miss Bebota Paraguay te
+						espera. ¡Animate!
 					</p>
 					<a
-						href="https://wa.me/595981123456?text=¡Hola!%20Quisiera%20información%20para%20la%20inscripción%20a%20Miss%20Bebota%20Paraguay."
+						href="https://wa.me/595981951315?text=¡Hola!%20Quisiera%20información%20para%20la%20inscripción%20a%20Miss%20Bebota%20Paraguay."
 						target="_blank"
 						rel="noopener noreferrer"
 						class="cta-button inline-flex items-center px-8 py-4 rounded-full text-white font-semibold text-xl shadow-lg transition-all duration-300 transform hover:scale-105"
 						style="background-color: var(--color-pink-bubblegum); color: var(--color-creamy-white);">
-						<svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
-							<path
-								d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.34 4.96l-1.4 5.17 5.25-1.37c1.45.79 3.08 1.21 4.67 1.21 5.46 0 9.91-4.45 9.91-9.91s-4.45-9.91-9.91-9.91zm0 2c4.35 0 7.91 3.56 7.91 7.91 0 4.35-3.56 7.91-7.91 7.91-1.57 0-3.08-.47-4.35-1.34l-.3-.18-3.1 1.05 1.08-3.04-.2-.3c-.94-1.35-1.44-2.91-1.44-4.54 0-4.35 3.56-7.91 7.91-7.91zm-3.81 5.09c-.11-.27-.24-.31-.38-.32-.14-.01-.29-.01-.44.01-.15.02-.38.16-.58.38-.2.22-.55.55-.66.66-.11.11-.22.25-.11.47.11.22.25.44.47.66s.47.38.7.47c.22.09.47.07.69.05.22-.02.66-.27.75-.36.09-.09.18-.2.25-.32.07-.11.14-.2.18-.27.05-.09.09-.16.09-.27 0-.11-.27-.14-.38-.16zM15.42 14.54c-.11.27-.24.31-.38.32-.14.01-.29.01-.44-.01-.15-.02-.38-.16-.58-.38-.2-.22-.55-.55-.66-.66-.11-.11-.22-.25-.11-.47.11-.22.25-.44.47-.66s.47-.38.7-.47c.22-.09.47-.07.69-.05.22.02.66.27.75.36.09.09.18.2.25.32.07.11.14.2.18.27.05.09.09.16.09.27 0 .11-.27.14-.38.16z"
-							></path>
-						</svg>
 						Inscríbete por WhatsApp
 					</a>
 				</div>
@@ -107,7 +103,7 @@ const eventos = [
 		</section>
 
 		<Section
-			class="proximos-eventos py-16 px-6 md:px-12 lg:px-20 text-center"
+			class="proximos-eventos py-16 px-6 md:px-12 lg:px-20 text-center bg-black"
 			style="background-color: var(--color-lilac-soft);">
 			<h2
 				class="text-4xl lg:text-5xl font-extrabold mb-12"

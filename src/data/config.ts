@@ -4,7 +4,7 @@ export const siteCurrency = 'PYG'; // Paraguay Guarani
 export const siteLocale = 'es-PY'; // Spanish - Paraguay
 export const siteDomain = 'missbebota.netlify.app';
 export const siteName = 'Miss Bebota Paraguay';
-export const siteSlogan = 'la chica mas linda';
+export const siteSlogan = ' El escenario donde nace tu brillo.';
 export const themeColor = '#FF69B4';
 
 export const phone = {
@@ -13,38 +13,33 @@ export const phone = {
 };
 
 export const email = {
-	href: 'mailto:info@pawstronaut.com',
-	label: 'info@pawstronaut.com',
+	href: 'mailto:maryprieto3@gmail.com',
+	label: 'maryprieto3@gmail.com',
 };
 
 export const address = {
-	street: '1234 Space Street',
-	city: 'Galaxy City',
-	zip: '12345',
-	state: 'Milky Way',
-	country: 'Space',
+	street: 'Guaranies 4779',
+	city: 'Asunción',
+	zip: '1421',
+	state: 'Capital',
+	country: 'Paraguay',
 };
 
 export const socialMedia = {
 	facebook: {
-		url: 'https://facebook.com',
+		url: 'https://www.facebook.com/missbebotaparaguay',
 		label: 'Facebook',
 		icon: 'facebook',
 	},
 	x: {
-		url: 'https://x.com',
+		url: 'https://x.com/MaryPrietoUnica',
 		label: 'X',
 		icon: 'x',
 	},
 	instagram: {
-		url: 'https://instagram.com',
+		url: 'https://www.instagram.com/missbebotaparaguay/',
 		label: 'Instagram',
 		icon: 'instagram',
-	},
-	youtube: {
-		url: 'https://youtube.com',
-		label: 'YouTube',
-		icon: 'youtube',
 	},
 };
 

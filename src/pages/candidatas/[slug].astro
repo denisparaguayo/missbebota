@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import Sponsor from '~/components/sponsor.astro';
 import Layout from '~/layouts/Layout.astro';
 
 export async function getStaticPaths() {
@@ -26,7 +27,7 @@ const { data, body } = candidata;
 			<!-- Imagen -->
 			<div>
 				<img
-					src={`/images/${data.imageUrl}`}
+					src={`/images/candidatas/${data.imageUrl}`}
 					alt={`${data.name} - ${data.city}`}
 					class="w-full h-auto rounded shadow-md"
 					loading="lazy"
@@ -76,4 +77,5 @@ const { data, body } = candidata;
 			</div>
 		</div>
 	</section>
+	<Sponsor class="mt-10" />
 </Layout>
