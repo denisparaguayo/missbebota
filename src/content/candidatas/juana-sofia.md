@@ -8,6 +8,7 @@ imageUrl: miss-bebota-1.jpg
 instagram: anasofia_rdz_py
 voteLink: https://www.instagram.com/p/C7X3sD4J2K1/
 isFeatured: true
+carpeta: juana-sofia
 ---
 
 Juana Sofía cree firmemente en el poder transformador del arte y la educación. Su visión es construir puentes a través de la creatividad.

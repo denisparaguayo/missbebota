@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import GaleriaCandidata from '~/components/GaleriaCandidata.astro';
 import Sponsor from '~/components/sponsor.astro';
 import Layout from '~/layouts/Layout.astro';
 
@@ -76,6 +77,11 @@ const { data, body } = candidata;
 				</a>
 			</div>
 		</div>
+		<!-- Galería -->
+		{/* Datos de la candidata */}
+	</section>
+	<section class="container px-4 mb-10">
+		<GaleriaCandidata carpeta={data.carpeta} />
 	</section>
 	<Sponsor class="mt-10" />
 </Layout>

@@ -49,6 +49,7 @@ const candidatas = defineCollection({
 	schema: z.object({
 		id: z.number().optional(),
 		name: z.string(),
+		carpeta: z.string(),
 		age: z.number().min(18),
 		city: z.string(),
 		description: z.string().optional(),

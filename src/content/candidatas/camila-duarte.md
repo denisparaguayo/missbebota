@@ -8,6 +8,7 @@ imageUrl: miss-bebota-3.jpg
 instagram: cami.duarte.ce
 voteLink: https://www.instagram.com/p/C7Z9fK8L4W3/
 isFeatured: true
+carpeta: modelo-1
 ---
 
 Camila combina su amor por la ciencia con el servicio social.  

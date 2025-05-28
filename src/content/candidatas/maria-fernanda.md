@@ -8,6 +8,7 @@ imageUrl: miss-bebota-2.jpg
 instagram: mafer_lopez25
 voteLink: https://www.instagram.com/p/C7Y4tH2J3Z2/
 isFeatured: false
+carpeta: modelo-1
 ---
 
 María Fernanda promueve la conciencia ecológica entre los jóvenes y trabaja activamente en proyectos comunitarios.  

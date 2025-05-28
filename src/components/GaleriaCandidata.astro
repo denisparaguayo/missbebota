@@ -1,0 +1,44 @@
+---
+export interface Props {
+	carpeta?: string;
+}
+
+const { carpeta } = Astro.props;
+
+// Importamos todas las imágenes de todas las carpetas
+const allImages = import.meta.glob(
+	'/src/assets/images/candidatas/**/*.{jpg,jpeg,png,webp}',
+	{
+		as: 'url',
+		eager: true,
+	}
+);
+
+// Filtramos las que pertenecen a la carpeta deseada
+let galeria: string[] = [];
+if (carpeta) {
+	galeria = Object.entries(allImages)
+		.filter(([path]) => path.includes(`/candidatas/${carpeta}/`))
+		.map(([, url]) => url);
+}
+---
+
+{
+	galeria.length > 0 && (
+		<section class="mt-10">
+			<h2 class="text-3xl font-bold mb-4">Galería</h2>
+			<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+				{galeria.map((src) => (
+					<div class="w-full h-64 overflow-hidden rounded-md shadow bg-gray-100">
+						<img
+							src={src}
+							alt="Imagen de galería"
+							class="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
+							loading="lazy"
+						/>
+					</div>
+				))}
+			</div>
+		</section>
+	)
+}
