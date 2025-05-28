@@ -1,11 +1,25 @@
 ---
-import "~/styles/tailwind.css";
-import { ClientRouter } from "astro:transitions";
-import Header from "~/components/Header.astro";
-import Footer from "~/components/Footer.astro";
-const { pageTitle, title, description } = Astro.props;
+// src/layouts/Layout.astro
+import '~/styles/tailwind.css';
+import { ClientRouter } from 'astro:transitions';
+import Header from '~/components/Header.astro';
+import Footer from '~/components/Footer.astro';
+
+const { pageTitle = 'Miss Bebota Paraguay', title, description } = Astro.props;
 const baseUrl = `${Astro.url.protocol}//${Astro.url.host}`;
-import { siteName, siteLang, themeColor } from "~/data/config";
+
+import { siteName, siteLang, themeColor } from '~/data/config';
+
+const colors = {
+	pinkBarbie: '#EE3BEE',
+	pinkPastel: '#FDD3F4',
+	pinkBubblegum: '#FF69B4',
+	yellowPastel: '#FFFACD',
+	blueSky: '#ADD8E6',
+	lilacSoft: '#E6E6FA',
+	creamyWhite: '#FFFDD0',
+	goldenGlitter: '#FFD700',
+};
 ---
 
 <!doctype html>
@@ -17,8 +31,7 @@ import { siteName, siteLang, themeColor } from "~/data/config";
 		<meta name="description" content={description} />
 		<meta name="robots" content="index,follow" />
 		<meta name="googlebot" content="index,follow" />
-		<link rel="author" href="humans.txt" />
-
+		<link rel="author" href="/humans.txt" />
 		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="shortcut icon" href="/favicon.ico" />
@@ -26,27 +39,119 @@ import { siteName, siteLang, themeColor } from "~/data/config";
 		<meta name="apple-mobile-web-app-title" content={siteName} />
 		<link rel="manifest" href="/site.webmanifest" />
 
+		{/* --- Google Fonts: Importa solo Roboto --- */}
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		{/* --- Fin Google Fonts --- */}
+
 		<meta property="og:url" content={Astro.url} />
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content={title} />
+		<meta property="og:title" content={title || pageTitle} />
 		<meta property="og:image" content={`${baseUrl}/images/og-image.jpg`} />
 		<meta property="og:description" content={description} />
-		<meta property="og:site_name" content="WP Infusion" />
+		<meta property="og:site_name" content={siteName} />
 		<meta property="og:locale" content={siteLang} />
 
-		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:url" content={Astro.url} />
-		<meta name="twitter:title" content={title} />
+		<meta name="twitter:title" content={title || pageTitle} />
 		<meta name="twitter:description" content={description} />
-		<!-- <meta name="twitter:image" content={`${baseUrl}/images/og-image.jpg`} /> -->
-		<title>{pageTitle}</title>
+		<meta name="twitter:image" content={`${baseUrl}/images/og-image.jpg`} />
+		<title>{title}</title>
 		<ClientRouter />
 	</head>
 	<body>
 		<Header />
-		<main>
+		<main class="content-wrapper">
 			<slot />
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style define:vars={colors}>
+	:root {
+		--color-pink-barbie: var(--pinkBarbie);
+		--color-pink-pastel: var(--pinkPastel);
+		--color-pink-bubblegum: var(--pinkBubblegum);
+		--color-yellow-pastel: var(--yellowPastel);
+		--color-blue-sky: var(--blueSky);
+		--color-lilac-soft: var(--lilacSoft);
+		--color-creamy-white: var(--creamyWhite);
+		--color-golden-glitter: var(--goldenGlitter);
+
+		/* Usa Roboto para ambas variables de fuente */
+		--font-primary: 'Roboto', sans-serif;
+		--font-heading: 'Roboto', sans-serif;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		font-family: var(--font-primary);
+		background-color: var(--color-pink-pastel);
+		color: #ee3bee;
+		margin: 0;
+		padding: 0;
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.content-wrapper {
+		flex-grow: 1;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: var(--font-heading);
+		color: var(--color-pink-barbie);
+		text-align: center;
+		margin-top: 1.5em;
+		margin-bottom: 0.8em;
+	}
+
+	p {
+		line-height: 1.6;
+		margin-bottom: 1em;
+	}
+
+	a {
+		color: var(--color-pink-bubblegum);
+		text-decoration: none;
+		transition: color 0.3s ease;
+	}
+
+	a:hover {
+		color: var(--color-pink-barbie);
+		text-decoration: underline;
+	}
+
+	::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: var(--color-pink-pastel);
+		border-radius: 5px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: var(--color-pink-bubblegum);
+		border-radius: 5px;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: var(--color-pink-barbie);
+	}
+</style>

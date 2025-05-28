@@ -1,55 +1,335 @@
 ---
-import Layout from "~/layouts/Layout.astro";
-import Section from "~/components/Section.astro";
-import Container from "~/components/Container.astro";
-import Heading from "~/components/Heading.astro";
-import Members from "~/components/Members.astro";
-import Article from "~/components/Article.astro";
+import Layout from '~/layouts/Layout.astro';
 ---
 
-<Layout>
-	<Section class:list={'bg-white'}>
-		<Container>
-			<Heading>
-				<h1 slot="heading-title" class="font-black text-teal-500 h2">About Us</h1>
-				<p slot="heading-content">
-					We are a small team of animal lovers dedicated to finding loving homes for cats in need. Our mission
-					is to provide a safe and caring environment for cats while they await adoption. We believe that
-					every cat deserves a loving home and we work tirelessly to make that happen. Thank you for
-					supporting our cause!
-				</p>
-			</Heading>
+<Layout
+	title="Quiénes Somos"
+	description="Descubre quiénes somos en Miss Bebota Paraguay, un concurso de belleza que promueve la elegancia, el talento y el empoderamiento femenino. Inscríbete para el casting y sé parte de esta experiencia única.">
+	{/* Hero Section */}
+	<section class="relative overflow-hidden pt-16 md:pt-24 pb-12 bg-black mt-10">
+		<div class="absolute inset-0"></div>
+		<div class="relative z-10 container mx-auto px-4 md:px-6 text-center">
+			<h1
+				class="text-barbie-pink text-5xl md:text-7xl font-bold mb-6 animate-fade-in-down">
+				¿Quiénes Somos?
+			</h1>
+			<p
+				class="text-creamy-white text-xl md:text-2xl font-semibold max-w-3xl mx-auto mb-10 animate-fade-in">
+				La elección de <strong class="text-bubblegum-pink"
+					>Miss Bebota Paraguay</strong
+				> es un prestigioso concurso de belleza diseñado para jóvenes talentosas
+				de 18 a 30 años. Este evento público no solo busca coronar a una representante
+				de belleza, sino también destacar la <strong class="text-bubblegum-pink"
+					>elegancia, el carisma y el talento</strong
+				> de las participantes a nivel nacional, con certámenes en diversas ciudades.
+				Nuestro objetivo es impulsar la belleza y, al mismo tiempo, promover <strong
+					>valores fundamentales como la educación, la responsabilidad y el
+					empoderamiento femenino.</strong
+				>
+			</p>
+		</div>
+	</section>
 
-			<Members />
-		</Container>
-	</Section>
+	{/* El Concurso Miss Bebota: Más Allá de la Belleza Section */}
+	<section class="bg-black py-16 px-6 md:px-12">
+		<div class="relative py-12">
+			<div
+				class="absolute inset-0 bg-gradient-to-r from-pink-pastel to-lilac-soft rounded-3xl shadow-xl transform -rotate-1 skew-y-1 scale-x-105">
+			</div>
+			<div
+				class="relative bg-creamy-white p-8 md:p-12 rounded-3xl shadow-lg border-2 border-barbie-pink">
+				<h2
+					class="text-barbie-pink text-4xl md:text-5xl font-bold text-center mb-8">
+					La Organización
+				</h2>
 
-	<Section class:list={'bg-white'}>
-		<Container>
-			<Article>
-				<h2 class="font-bold text-teal-500 h3">Our Story</h2>
-				<p>
-					Founded in 2010, our animal shelter has been dedicated to rescuing and rehoming cats in need. Over
-					the years, we have grown from a small group of volunteers to a well-established organization with a
-					network of foster homes and a dedicated team of staff and volunteers. Our shelter provides a safe
-					haven for cats of all ages, from kittens to seniors, and we work tirelessly to ensure they receive
-					the care and love they deserve.
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-8 mt-8">
+					{/* Participantes */}
+					<div>
+						<h3
+							class="text-bubblegum-pink text-3xl font-bold mb-3 flex items-center">
+							<span class="mr-3 text-golden-glitter text-4xl">✨</span> Participantes
+						</h3>
+						<p class="text-lg text-gray-700 leading-relaxed">
+							Dirigido a señoritas con <strong class="text-barbie-pink"
+								>actitud, alegría, ánimo, belleza y carisma</strong
+							>, de entre 18 y 30 años, que cuenten con disponibilidad de tiempo
+							para el desarrollo del concurso.
+						</p>
+					</div>
+
+					{/* Proceso de Selección */}
+					<div>
+						<h3
+							class="text-bubblegum-pink text-3xl font-bold mb-3 flex items-center">
+							<span class="mr-3 text-golden-glitter text-4xl">👑</span> Proceso de
+							Selección
+						</h3>
+						<p class="text-lg text-gray-700 leading-relaxed">
+							Las participantes suelen ser evaluadas en diferentes rondas en la
+							pasarela en <strong class="text-bubblegum-pink"
+								>traje de baño y vestido de noche</strong
+							>, demostrando su elegancia y presencia.
+						</p>
+					</div>
+
+					{/* Objetivos del Certamen */}
+					<div>
+						<h3
+							class="text-bubblegum-pink text-3xl font-bold mb-3 flex items-center">
+							<span class="mr-3 text-golden-glitter text-4xl">💖</span> Objetivos
+							del Certamen
+						</h3>
+						<p class="text-lg text-gray-700 leading-relaxed">
+							El objetivo del certamen es <strong class="text-barbie-pink"
+								>promover e impulsar la belleza</strong
+							> de las candidatas, así como su <strong class="text-barbie-pink"
+								>formación como líderes</strong
+							>. Ofrecemos un completo <strong class="text-bubblegum-pink"
+								>entrenamiento de modelaje</strong
+							> para potenciar sus habilidades.
+						</p>
+					</div>
+
+					{/* Promoción de la autoestima y la autoconfianza */}
+					<div>
+						<h3
+							class="text-bubblegum-pink text-3xl font-bold mb-3 flex items-center">
+							<span class="mr-3 text-golden-glitter text-4xl">💡</span> Autoestima
+							y Autoconfianza
+						</h3>
+						<p class="text-lg text-gray-700 leading-relaxed">
+							La participación en Miss Bebota es una oportunidad para que las
+							concursantes <strong class="text-barbie-pink"
+								>desarrollen su autoestima y autoconfianza</strong
+							>, aprendiendo a valorarse y a expresar todo su potencial en un
+							ambiente de crecimiento.
+						</p>
+					</div>
+
+					{/* Espectáculo + Moda + Entretenimiento */}
+					<div>
+						<h3
+							class="text-bubblegum-pink text-3xl font-bold mb-3 flex items-center">
+							<span class="mr-3 text-golden-glitter text-4xl">🎉</span> Espectáculo,
+							Moda y Entretenimiento
+						</h3>
+						<p class="text-lg text-gray-700 leading-relaxed">
+							Nuestro evento es una vibrante celebración que combina <strong
+								class="text-barbie-pink"
+								>Espectáculo, Moda y Entretenimiento</strong
+							> al más alto nivel. Contamos con <strong
+								class="text-bubblegum-pink"
+								>recursos propios y agencias aliadas</strong
+							> del mundo de la moda para garantizar una experiencia inolvidable.
+						</p>
+					</div>
+
+					{/* Generación de ingresos y oportunidades laborales */}
+					<div>
+						<h3
+							class="text-bubblegum-pink text-3xl font-bold mb-3 flex items-center">
+							<span class="mr-3 text-golden-glitter text-4xl">💰</span> Generación
+							de Ingresos y Oportunidades
+						</h3>
+						<p class="text-lg text-gray-700 leading-relaxed">
+							El certamen de belleza puede generar <strong
+								class="text-barbie-pink">ingresos significativos</strong
+							> a través de la promoción de las participantes, creando <strong
+								class="text-bubblegum-pink"
+								>oportunidades laborales directas e indirectas</strong
+							> en el mundo del modelaje y el entretenimiento.
+						</p>
+					</div>
+
+					{/* Beneficios para las participantes */}
+					<div class="lg:col-span-2">
+						{/* This section spans two columns on large screens */}
+						<h3
+							class="text-bubblegum-pink text-3xl font-bold mb-3 flex items-center justify-center lg:justify-start">
+							<span class="mr-3 text-golden-glitter text-4xl">🎁</span> Beneficios
+							para las Participantes
+						</h3>
+						<p
+							class="text-lg text-gray-700 leading-relaxed text-center lg:text-left mb-6">
+							La participación en el concurso Miss Bebota puede brindar a las
+							jóvenes una mayor <strong class="text-barbie-pink"
+								>exposición</strong
+							>, valiosas <strong class="text-barbie-pink"
+								>oportunidades de modelaje y publicidad</strong
+							>, así como el desarrollo de <strong class="text-bubblegum-pink"
+								>habilidades clave de presentación y comunicación</strong
+							> que las impulsarán en su carrera.
+						</p>
+						<p
+							class="text-lg text-gray-700 leading-relaxed text-center lg:text-left">
+							El objetivo del certamen de belleza es multifacético, abarcando la
+							promoción de la belleza física, pero también la formación de
+							líderes, la promoción de valores culturales y sociales, y la
+							generación de impacto económico y social.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{/* Criterios de Evaluación Section */}
+	<section class="bg-black py-16 px-6 md:px-12">
+		<h2
+			class="text-barbie-pink text-4xl md:text-5xl font-bold text-center mt-16 mb-8">
+			Criterios de Evaluación
+		</h2>
+		<p
+			class="text-xl text-creamy-white leading-relaxed text-center max-w-3xl mx-auto mb-8">
+			Nuestras participantes son evaluadas en una serie de aspectos clave para
+			asegurar una elección justa y completa de nuestra próxima Miss Bebota
+			Paraguay:
+		</p>
+		<ul
+			class="list-none text-lg text-creamy-white space-y-4 mb-12 mx-auto max-w-3xl">
+			<li class="flex items-start">
+				<span class="text-golden-glitter text-2xl mr-3 mt-1">✔</span>
+				<p class="leading-relaxed">
+					<strong class="text-bubblegum-pink"
+						>Facilidad de palabra y desenvolvimiento:</strong
+					> Habilidad para expresarse con claridad y naturalidad.
 				</p>
-				<h2 class="font-bold text-teal-500 h3">Our Mission</h2>
-				<p>
-					Our mission is to rescue, rehabilitate, and rehome cats in need. We believe that every cat deserves
-					a chance at a happy and healthy life, and we are committed to providing the best possible care for
-					our feline friends. We work closely with local communities to promote responsible pet ownership and
-					to educate the public about the importance of spaying and neutering.
+			</li>
+			<li class="flex items-start">
+				<span class="text-golden-glitter text-2xl mr-3 mt-1">✔</span>
+				<p class="leading-relaxed">
+					<strong class="text-bubblegum-pink"
+						>Conocimiento y personalidad:</strong
+					> Profundidad de pensamiento y autenticidad.
 				</p>
-				<h2 class="font-bold text-teal-500 h3">Get Involved</h2>
-				<p>
-					There are many ways to get involved with our shelter. Whether you are interested in adopting a cat,
-					volunteering your time, or making a donation, we welcome your support. Together, we can make a
-					difference in the lives of cats in need. Thank you for being a part of our community and for helping
-					us to achieve our mission.
+			</li>
+			<li class="flex items-start">
+				<span class="text-golden-glitter text-2xl mr-3 mt-1">✔</span>
+				<p class="leading-relaxed">
+					<strong class="text-bubblegum-pink">Presentación:</strong> Peinado y maquillaje
+					impecables.
 				</p>
-			</Article>
-		</Container>
-	</Section>
+			</li>
+			<li class="flex items-start">
+				<span class="text-golden-glitter text-2xl mr-3 mt-1">✔</span>
+				<p class="leading-relaxed">
+					<strong class="text-bubblegum-pink">Vestuario:</strong> Elección adecuada
+					y estilo.
+				</p>
+			</li>
+			<li class="flex items-start">
+				<span class="text-golden-glitter text-2xl mr-3 mt-1">✔</span>
+				<p class="leading-relaxed">
+					<strong class="text-bubblegum-pink"
+						>Dominio de escenario y expresión:</strong
+					> Presencia y capacidad de conectar con el público.
+				</p>
+			</li>
+			<li class="flex items-start">
+				<span class="text-golden-glitter text-2xl mr-3 mt-1">✔</span>
+				<p class="leading-relaxed">
+					<strong class="text-bubblegum-pink">Carisma y actitud:</strong> La chispa
+					única que cautiva.
+				</p>
+			</li>
+		</ul>
+	</section>
+
+	{/* Inscripciones Section */}
+	<section class="bg-black py-16 px-6 md:px-12">
+		<div class="relative py-12">
+			<div
+				class="absolute inset-0 bg-gradient-to-r from-pink-bubblegum to-barbie-pink rounded-3xl shadow-xl transform rotate-1 skew-y-1 scale-x-105">
+			</div>
+			<div
+				class="relative bg-creamy-white p-8 md:p-12 rounded-3xl shadow-lg border-2 border-golden-glitter">
+				<h2
+					class="text-barbie-pink text-4xl md:text-5xl font-bold text-center mb-8">
+					¡Inscríbete para el Casting!
+				</h2>
+				<p class="text-xl text-gray-700 leading-relaxed text-center mb-8">
+					Si cumples con los requisitos y sueñas con ser la próxima <strong
+						class="text-bubblegum-pink">Miss Bebota Paraguay</strong
+					>, te invitamos a participar en nuestro casting.
+				</p>
+
+				<h3 class="text-bubblegum-pink text-3xl font-bold mb-6 text-center">
+					Para inscribirte, por favor envía:
+				</h3>
+				<ul
+					class="list-none text-lg text-gray-700 space-y-4 mb-8 mx-auto max-w-xl">
+					<li class="flex items-start">
+						<span class="text-golden-glitter text-2xl mr-3 mt-1">📸</span>
+						<p class="leading-relaxed">Una foto de cuerpo entero.</p>
+					</li>
+					<li class="flex items-start">
+						<span class="text-golden-glitter text-2xl mr-3 mt-1">😊</span>
+						<p class="leading-relaxed">Una foto de rostro.</p>
+					</li>
+					<li class="flex items-start">
+						<span class="text-golden-glitter text-2xl mr-3 mt-1">🎬</span>
+						<p class="leading-relaxed">
+							Un video breve (tipo selfie) donde menciones tu <strong
+								class="text-barbie-pink">nombre, edad</strong
+							> y nos cuentes <strong class="text-barbie-pink"
+								>por qué te gustaría ser la ganadora de Miss Bebota Paraguay.</strong
+							>
+						</p>
+					</li>
+				</ul>
+
+				<p class="text-xl text-gray-700 leading-relaxed text-center mt-10">
+					Envía tu foto y video vía <strong class="text-bubblegum-pink"
+						>mensaje directo (DM) o <span class="text-green-500">WhatsApp</span
+						></strong
+					> al <strong class="text-barbie-pink text-3xl tracking-wide"
+						>0981951315</strong
+					>.
+					<br />
+					<span class="block text-gray-600 text-2xl font-bold mt-4"
+						>¡Esperamos conocerte!</span
+					>
+				</p>
+			</div>
+		</div>
+	</section>
 </Layout>
+
+<style>
+	/* Efecto de sombra de texto para títulos en el banner */
+	.text-shadow-pink-barbie {
+		text-shadow:
+			2px 2px 4px var(--color-barbie-pink),
+			-2px -2px 4px var(--color-bubblegum-pink);
+	}
+
+	/* Animaciones */
+	@keyframes fadeInDown {
+		from {
+			opacity: 0;
+			transform: translateY(-20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	.animate-fade-in-down {
+		animation: fadeInDown 1s ease-out forwards;
+	}
+
+	.animate-fade-in {
+		animation: fadeIn 1.5s ease-out forwards;
+	}
+</style>

@@ -1,0 +1,236 @@
+---
+// src/pages/inscripciones.astro
+import Layout from '~/layouts/Layout.astro';
+import { Image } from 'astro:assets'; // Para optimizar imágenes
+
+import bannerImage from '~/assets/images/miss-bebota-1.jpg'; // Asegúrate de tener una imagen de banner para esta sección
+
+// Puedes definir tus datos de contacto aquí o importarlos de un archivo de configuración
+const whatsappNumber = '595981951315';
+const instagramLink = 'https://www.instagram.com/missbebotaparaguay'; // Reemplaza con tu IG real
+const facebookLink = 'https://www.facebook.com/missbebotaparaguay'; // Reemplaza con tu FB real
+
+const pageTitle = 'Inscripciones - Miss Bebota Paraguay';
+const pageDescription =
+	'Inscríbete en el concurso Miss Bebota Paraguay. Descubre cómo participar y qué requisitos necesitas para ser la próxima reina.';
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<section class="relative overflow-hidden pt-16 md:pt-24 pb-12 bg-black mt-10">
+		<div class="absolute inset-0"></div>
+		{/* Opacidad reducida */}
+		<div class="relative z-10 container mx-auto px-4 md:px-6 text-center">
+			<h1
+				class="text-barbie-pink text-5xl md:text-7xl font-bold mb-6 animate-fade-in-down">
+				¡Inscríbete y Cumple tu Sueño!
+			</h1>
+			<p
+				class="text-creamy-white text-xl md:text-2xl font-semibold max-w-3xl mx-auto mb-10 animate-fade-in">
+				{/* Cambiado a creamy-white para el texto */}
+				¿Lista para brillar y ser la próxima Miss Bebota Paraguay? Aquí te detallamos
+				todo lo que necesitas saber para participar en nuestro fabuloso concurso.
+			</p>
+
+			<div
+				class="relative w-full max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl transform hover:scale-102 transition-transform duration-500 ease-in-out">
+				<Image
+					src={bannerImage}
+					alt="Miss Bebota Paraguay Concurso de Belleza"
+					width={1200}
+					height={600}
+					class="w-full h-auto object-cover"
+				/>
+				<div class="absolute inset-0 bg-black opacity-20"></div>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-16 px-4 md:px-6 bg-black">
+		{/* Cambiado a bg-black */}
+		<div class="container mx-auto">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+				<div
+					class="bg-white p-8 md:p-10 rounded-2xl shadow-xl border-2 border-bubblegum-pink transform hover:translate-y-[-5px] transition duration-300">
+					<h2 class="text-barbie-pink text-4xl font-bold mb-6 text-center">
+						Requisitos para Participar
+					</h2>
+					<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+						Para asegurar que cada participante tenga las mejores oportunidades,
+						hemos establecido algunos requisitos básicos:
+					</p>
+					<ul class="list-none space-y-4 text-lg text-gray-700">
+						<li class="flex items-start">
+							<span class="text-golden-glitter text-2xl mr-3 mt-1">✨</span>
+							<p class="leading-relaxed">
+								Ser <strong class="text-bubblegum-pink">señorita</strong> con una
+								edad comprendida entre los <strong class="text-bubblegum-pink"
+									>18 y 30 años</strong
+								>.
+							</p>
+						</li>
+						<li class="flex items-start">
+							<span class="text-golden-glitter text-2xl mr-3 mt-1">💖</span>
+							<p class="leading-relaxed">
+								Poseer cualidades como <strong class="text-barbie-pink"
+									>actitud, alegría, ánimo, belleza y carisma</strong
+								>.
+							</p>
+						</li>
+						<li class="flex items-start">
+							<span class="text-golden-glitter text-2xl mr-3 mt-1">🗓️</span>
+							<p class="leading-relaxed">
+								Contar con <strong class="text-barbie-pink"
+									>disponibilidad de tiempo</strong
+								> para las etapas de preparación y el desarrollo del concurso.
+							</p>
+						</li>
+					</ul>
+					<p class="text-md text-gray-600 mt-8 text-center italic">
+						¡Buscamos talento y personalidad en cada rincón de Paraguay!
+					</p>
+				</div>
+
+				<div
+					class="bg-white p-8 md:p-10 rounded-2xl shadow-xl border-2 border-bubblegum-pink transform hover:translate-y-[-5px] transition duration-300">
+					<h2 class="text-barbie-pink text-4xl font-bold mb-6 text-center">
+						Proceso de Inscripción y Casting
+					</h2>
+					<p class="text-lg text-gray-700 mb-6 leading-relaxed">
+						Participar es muy sencillo. Sigue estos pasos para tu casting
+						virtual inicial:
+					</p>
+					<ul class="list-none space-y-4 text-lg text-gray-700">
+						<li class="flex items-start">
+							<span class="text-golden-glitter text-2xl mr-3 mt-1">📸</span>
+							<p class="leading-relaxed">
+								Envía una <strong class="text-bubblegum-pink"
+									>foto de cuerpo entero</strong
+								> y una <strong class="text-bubblegum-pink"
+									>foto de rostro</strong
+								> de alta calidad.
+							</p>
+						</li>
+						<li class="flex items-start">
+							<span class="text-golden-glitter text-2xl mr-3 mt-1">🎬</span>
+							<p class="leading-relaxed">
+								Manda un <strong class="text-bubblegum-pink">video breve</strong
+								> (tipo selfie, máximo 1 minuto) donde digas tu <strong
+									class="text-barbie-pink">nombre, edad</strong
+								> y comentes <strong class="text-barbie-pink"
+									>por qué te gustaría ser la ganadora</strong
+								> de Miss Bebota Paraguay. ¡Queremos conocer tu personalidad!
+							</p>
+						</li>
+						<li class="flex items-start">
+							<span class="text-golden-glitter text-2xl mr-3 mt-1">✉️</span>
+							<p class="leading-relaxed">
+								Envía tu foto y video por <strong class="text-bubblegum-pink"
+									>mensaje directo (DM) en Instagram</strong
+								> o por <strong class="text-bubblegum-pink">WhatsApp</strong>.
+							</p>
+						</li>
+					</ul>
+					<div class="text-center mt-10">
+						<p class="text-2xl text-barbie-pink font-bold mb-4">
+							¡Contáctanos para tu Casting!
+						</p>
+						<a
+							href={`https://wa.me/${whatsappNumber}`}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="button bg-barbie-pink hover:bg-barbie-pink/80 text-white focus-visible:outline-barbie-pink inline-flex items-center group">
+							<svg
+								class="w-6 h-6 mr-2 transition-transform duration-300 group-hover:rotate-6"
+								fill="currentColor"
+								viewBox="0 0 24 24"
+								><path
+									d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.35 4.96L2.05 22l5.25-1.38c1.47.81 3.16 1.25 4.74 1.25 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm3.87 14.93c-.15.42-.84.72-1.22.75-.38.03-.84.05-1.31-.14-.54-.22-1.83-.69-2.65-2.02-.82-1.34-1.37-2.65-1.38-2.73-.01-.08-.02-.2-.02-.3-.02-.23.14-.38.3-.53.12-.11.26-.26.39-.4.13-.13.18-.21.28-.4.09-.2.05-.38-.02-.54-.07-.15-.49-1.3-.67-1.74-.18-.44-.36-.36-.49-.37-.12-.01-.26-.02-.4-.02-.14 0-.37.05-.56.23-.2.19-.75.74-.75 1.81 0 1.07.77 2.1 1.03 2.45.27.35 1.5 2.42 3.53 3.28 2.03.85 2.5.68 2.95.63.45-.05 1.45-.66 1.63-1.21.18-.55.18-.94.13-1.02-.05-.08-.19-.13-.4-.22z"
+								></path></svg
+							>
+							WhatsApp: {whatsappNumber}
+						</a>
+						<a
+							href={instagramLink}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="button bg-bubblegum-pink hover:bg-bubblegum-pink/80 text-white focus-visible:outline-bubblegum-pink ml-4 inline-flex items-center group">
+							<svg
+								class="w-6 h-6 mr-2 transition-transform duration-300 group-hover:rotate-6"
+								fill="currentColor"
+								viewBox="0 0 24 24"
+								><path
+									d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2zm-.2 2.2V4h8.4c2.1 0 3.8 1.7 3.8 3.8v8.4c0 2.1-1.7 3.8-3.8 3.8H7.6c-2.1 0-3.8-1.7-3.8-3.8V7.8c0-2.1 1.7-3.8 3.8-3.8zm10.7 0c.9 0 1.6.7 1.6 1.6s-.7 1.6-1.6 1.6-1.6-.7-1.6-1.6.7-1.6 1.6-1.6zM12 7.8c-2.3 0-4.2 1.9-4.2 4.2s1.9 4.2 4.2 4.2 4.2-1.9 4.2-4.2-1.9-4.2-4.2-4.2zm0 1.6c1.5 0 2.6 1.2 2.6 2.6s-1.2 2.6-2.6 2.6-2.6-1.2-2.6-2.6 1.2-2.6 2.6-2.6z"
+								></path></svg
+							>
+							Instagram DM
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="bg-black py-16">
+		{/* Cambiado a bg-black */}
+		<div class="container mx-auto px-4 md:px-6 text-center">
+			<h2 class="text-barbie-pink text-4xl font-bold mb-8">
+				¿Tienes Preguntas? ¡Estamos Aquí para Ayudarte!
+			</h2>
+			<p class="text-creamy-white text-xl max-w-3xl mx-auto mb-8">
+				{/* Cambiado a creamy-white para el texto */}
+				Si tienes alguna duda sobre el proceso de inscripción o los requisitos, no
+				dudes en contactarnos. Nuestro equipo estará encantado de asistirte en tu
+				camino hacia la corona de Miss Bebota Paraguay.
+			</p>
+			<a
+				href={`https://wa.me/${whatsappNumber}`}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="button bg-golden-glitter hover:bg-golden-glitter/80 text-black focus-visible:outline-golden-glitter inline-flex items-center">
+				Contáctanos por WhatsApp
+			</a>
+			<p class="text-sm text-gray-400 mt-4">
+				Horario de atención: Lunes a Viernes, 9:00 - 18:00 hs.
+			</p>
+			{/* Texto más claro para fondo oscuro */}
+		</div>
+	</section>
+</Layout>
+
+<style>
+	/* Efecto de sombra de texto para títulos en el banner */
+	.text-shadow-pink-barbie {
+		text-shadow:
+			2px 2px 4px var(--color-barbie-pink),
+			-2px -2px 4px var(--color-bubblegum-pink);
+	}
+
+	/* Animaciones */
+	@keyframes fadeInDown {
+		from {
+			opacity: 0;
+			transform: translateY(-20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	.animate-fade-in-down {
+		animation: fadeInDown 1s ease-out forwards;
+	}
+
+	.animate-fade-in {
+		animation: fadeIn 1.5s ease-out forwards;
+	}
+</style>

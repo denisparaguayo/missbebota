@@ -1,0 +1,79 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '~/layouts/Layout.astro';
+
+export async function getStaticPaths() {
+	const candidatas = await getCollection('candidatas');
+	return candidatas.map((c) => ({
+		params: { slug: c.id.replace(/\.md$/, '') },
+	}));
+}
+
+const { slug } = Astro.params;
+const candidatas = await getCollection('candidatas');
+const candidata = candidatas.find((c) => c.id.replace(/\.md$/, '') === slug);
+
+if (!candidata) {
+	throw new Error(`No candidata found for slug: ${slug}`);
+}
+
+const { data, body } = candidata;
+---
+
+<Layout title={`${data.name} - ${data.city}`} description={data.description}>
+	<section class="container px-4 mb-10 relative overflow-hidden pt-16">
+		<div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+			<!-- Imagen -->
+			<div>
+				<img
+					src={`/images/${data.imageUrl}`}
+					alt={`${data.name} - ${data.city}`}
+					class="w-full h-auto rounded shadow-md"
+					loading="lazy"
+				/>
+			</div>
+
+			<!-- Datos -->
+			<div>
+				<h1 class="text-3xl font-bold mb-2">{data.name}</h1>
+				<p class="text-gray-600 mb-1">Edad: {data.age}</p>
+				<p class="text-gray-600 mb-1">Ciudad: {data.city}</p>
+				{
+					data.instagram && (
+						<p class="text-gray-600 mb-4">
+							Instagram:
+							<a
+								href={`https://instagram.com/${data.instagram}`}
+								target="_blank"
+								rel="noopener"
+								class="text-blue-500 hover:underline ml-1">
+								@{data.instagram}
+							</a>
+						</p>
+					)
+				}
+
+				{
+					data.voteLink && (
+						<a
+							href={data.voteLink}
+							target="_blank"
+							rel="noopener"
+							class="inline-block bg-pink-600 text-white px-5 py-2 rounded-lg hover:bg-pink-700 transition mb-6">
+							Votar en Instagram
+						</a>
+					)
+				}
+
+				<div class="prose prose-p:text-gray-800 mt-4 max-w-none">
+					{body}
+				</div>
+				<a
+					href="/candidatas"
+					class="inline-block px-5 py-2 bg-[--goldenGlitter] text-gray-800 rounded-md hover:bg-gray-300 transition text-sm text-center mx-auto mt-8">
+					← Volver
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>

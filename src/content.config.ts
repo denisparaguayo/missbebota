@@ -1,13 +1,13 @@
-import { z, defineCollection } from "astro:content";
-import { file, glob } from "astro/loaders";
+import { z, defineCollection } from 'astro:content';
+import { file, glob } from 'astro/loaders';
 
 const cats = defineCollection({
-	loader: file("src/data/cats.json"),
+	loader: file('src/data/cats.json'),
 	schema: ({ image }) =>
 		z.object({
 			name: z.string(),
 			breed: z.string(),
-			gender: z.enum(["male", "female"]),
+			gender: z.enum(['male', 'female']),
 			age: z.number().min(0),
 			birthDate: z.coerce.date().optional(),
 			description: z.string().optional(),
@@ -22,7 +22,7 @@ const cats = defineCollection({
 });
 
 const members = defineCollection({
-	loader: file("src/data/members.json"),
+	loader: file('src/data/members.json'),
 	schema: ({ image }) =>
 		z.object({
 			name: z.string(),
@@ -33,7 +33,7 @@ const members = defineCollection({
 });
 
 const blog = defineCollection({
-	loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/blog" }),
+	loader: glob({ pattern: '**/[^_]*.md', base: './src/content/blog' }),
 	schema: ({ image }) =>
 		z.object({
 			title: z.string(),
@@ -44,5 +44,19 @@ const blog = defineCollection({
 			publishDate: z.coerce.date().default(new Date(2014, 0, 1)),
 		}),
 });
+const candidatas = defineCollection({
+	loader: glob({ pattern: '**/[^_]*.md', base: './src/content/candidatas' }),
+	schema: z.object({
+		id: z.number().optional(),
+		name: z.string(),
+		age: z.number().min(18),
+		city: z.string(),
+		description: z.string().optional(),
+		imageUrl: z.string().optional(), // Cambiar aquí
+		instagram: z.string().optional(),
+		voteLink: z.string().url().optional(),
+		isFeatured: z.boolean().default(false),
+	}),
+});
 
-export const collections = { cats, members, blog };
+export const collections = { cats, members, blog, candidatas };

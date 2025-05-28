@@ -8,7 +8,7 @@ body {
 }
 
 body {
-	@apply h-full scroll-smooth font-sans text-gray-700;
+	@apply h-full scroll-smooth font-roboto text-gray-700; /* Cambiado a font-roboto */
 }
 
 h1,
@@ -17,7 +17,7 @@ h3,
 h4,
 h5,
 h6 {
-	@apply font-bold break-words font-caveat;
+	@apply font-bold break-words font-roboto; /* Cambiado a font-roboto */
 }
 
 h1,
@@ -51,7 +51,7 @@ h6,
 }
 
 p {
-	@apply leading-relaxed;
+	@apply leading-relaxed font-roboto; /* Cambiado a font-roboto */
 }
 
 .button {
@@ -103,22 +103,6 @@ label {
 	@apply block text-sm/6 font-semibold;
 }
 
-/* Swiper */
 .swiper-pagination-bullet-active.swiper-pagination-bullet-active {
 	@apply bg-fuchsia-500;
-}
-
-body,
-section.bg-white {
-	background-image: url('/pattern.jpg');
-	background-repeat: repeat;
-}
-
-/* caveat-brush-regular - latin */
-@font-face {
-	font-display: swap;
-	font-family: "Caveat Brush";
-	font-style: normal;
-	font-weight: 400;
-	src: url("/fonts/caveat/caveat-brush-v11-latin-regular.woff2") format("woff2");
 }

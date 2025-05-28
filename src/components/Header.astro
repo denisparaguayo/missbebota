@@ -1,86 +1,113 @@
 ---
-import { menuMain } from "~/data/menus.js";
-import LogoContainer from "~/components//LogoContainer.astro";
-import SocialMediaIcons from "./SocialMediaIcons.astro";
+// src/components/Header.astro
+import { menuMain } from '~/data/menus.js'; // Asegúrate de que esta ruta sea correcta
+import LogoContainer from '~/components/LogoContainer.astro'; // Asegúrate de que esta ruta sea correcta
+// import SocialMediaIcons from './SocialMediaIcons.astro'; // Descomenta si usas este componente
 
 const rmTrailingSlash = (path: string): string => {
-  return path.endsWith("/") && path.length > 1 
-    ? path.slice(0, path.length - 1) 
-    : path;
-}
+	return path.endsWith('/') && path.length > 1
+		? path.slice(0, path.length - 1)
+		: path;
+};
 
 const pathname = rmTrailingSlash(Astro.url.pathname);
+
+// Colores definidos para usar directamente en estilos si es necesario (o usa clases de Tailwind)
+const colors = {
+	pinkBarbie: '#EE3BEE',
+	pinkPastel: '#FDD3F4',
+	pinkBubblegum: '#FF69B4',
+	yellowPastel: '#FFFACD',
+	blueSky: '#ADD8E6',
+	lilacSoft: '#E6E6FA',
+	creamyWhite: '#FFFDD0',
+	goldenGlitter: '#FFD700',
+};
 ---
 
 <header x-data="{ open: false }" @keydown.window.escape="open = false">
 	<div>
-		<div id="header-wrapper" class="fixed top-4 z-40 inset-x-0 w-full">
-			<div class="container">
-				<div class="container max-lg:px-4 max-w-none bg-white shadow rounded-xl py-4 lg:py-6">
-					<nav class="flex relative items-center justify-between" aria-label="Global">
-						<a href="/" class="relative z-10">
-							<LogoContainer />
-						</a>
-						<div class="flex lg:hidden">
-							<button
-								type="button"
-								class="-m-2.5 inline-flex items-center justify-center p-2.5"
-								@click="open = true"
-							>
-								<span class="sr-only">Open main menu</span>
-								<svg
-									class="size-6 text-teal-500"
-									fill="none"
-									viewBox="0 0 24 24"
-									stroke-width="1.5"
-									stroke="currentColor"
-									aria-hidden="true"
-									data-slot="icon"
-								>
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-								</svg>
-							</button>
-						</div>
-						<div class="max-lg:hidden absolute w-full inset-x-0">
-							<div class="flex gap-x-12 justify-end xl:justify-center items-center">
-								{
-									menuMain.map((item) => (
-										<a
-											href={item.url}
-											class={`transition text-base/6 font-semibold hover:text-fuchsia-500 ${pathname === item.url ? "menu-item-active" : ""}`}
-										>
-											{item.name}
-										</a>
-									))
-								}
-							</div>
-						</div>
-						<div class="relative z-10 flex items-center gap-x-4 max-xl:hidden">
-							<SocialMediaIcons />
-						</div>
-					</nav>
-				</div>
+		<div
+			id="header-wrapper"
+			class="fixed top-0 z-40 inset-x-0 w-full
+                   bg-black shadow-lg border-b-4 border-bubblegum-pink">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-5">
+				<nav class="flex items-center justify-between" aria-label="Global">
+					<a href="/" class="relative z-10 flex-shrink-0">
+						<LogoContainer />
+					</a>
+					<div class="flex lg:hidden">
+						<button
+							type="button"
+							class="-m-2.5 inline-flex items-center justify-center p-2.5 text-barbie-pink"
+							@click="open = true">
+							<span class="sr-only">Abrir menú principal</span>
+							<svg
+								class="size-8"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								aria-hidden="true"
+								data-slot="icon">
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+							</svg>
+						</button>
+					</div>
+					<div
+						class="hidden lg:flex lg:gap-x-10 lg:justify-end lg:items-center">
+						{
+							menuMain.map((item) => (
+								<a
+									href={item.url}
+									class={`
+                                        transition text-lg font-semibold px-4 py-2 rounded-md
+                                        text-barbie-pink hover:text-white hover:bg-bubblegum-pink
+                                        ${pathname === item.url ? 'bg-bubblegum-pink text-white shadow-sm' : 'text-barbie-pink'}
+                                    `}>
+									{item.name}
+								</a>
+							))
+						}
+					</div>
+					{/* Puedes descomentar y adaptar SocialMediaIcons si lo necesitas */}
+					{
+						/* <div class="relative z-10 flex items-center gap-x-4 max-xl:hidden">
+                        <SocialMediaIcons />
+                    </div> */
+					}
+				</nav>
 			</div>
 		</div>
-		<div class="lg:hidden" x-ref="dialog" x-show="open" x-cloak aria-modal="true">
+
+		{/* Mobile menu, show/hide based on menu state. */}
+		<div
+			class="lg:hidden"
+			x-ref="dialog"
+			x-show="open"
+			x-cloak
+			aria-modal="true">
 			<div
-				class="fixed inset-0 z-50 w-full overflow-y-auto bg-white/80 backdrop-blur-sm px-12 py-8"
+				class="fixed inset-0 z-50 w-full overflow-y-auto h-screen
+                       bg-pink-pastel/95 backdrop-blur-sm px-10 py-6"
 				x-show="open"
-				x-transition:enter="transition ease-out"
+				x-transition:enter="transition ease-out duration-300"
 				x-transition:enter-start="opacity-0"
 				x-transition:enter-end="opacity-100"
-				x-transition:leave="transition ease-in"
+				x-transition:leave="transition ease-in duration-200"
 				x-transition:leave-start="opacity-100"
 				x-transition:leave-end="opacity-0"
-				x-cloak
-			>
+				x-cloak>
 				<div class="flex items-center justify-between">
 					<LogoContainer />
-					<button type="button" class="-m-2.5 p-2.5 text-brand-red" @click="open = false">
-						<span class="sr-only">Close menu</span>
+					<button
+						type="button"
+						class="-m-2.5 p-2.5 text-barbie-pink"
+						@click="open = false">
+						<span class="sr-only">Cerrar menú</span>
 						<svg
 							class="size-8"
 							fill="none"
@@ -88,22 +115,26 @@ const pathname = rmTrailingSlash(Astro.url.pathname);
 							stroke-width="2"
 							stroke="currentColor"
 							aria-hidden="true"
-							data-slot="icon"
-						>
-							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
+							data-slot="icon">
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M6 18 18 6M6 6l12 12"></path>
 						</svg>
 					</button>
 				</div>
 				<div class="mt-6 flow-root">
-					<div class="-my-6 divide-y divide-gray-500/10">
-						<div class="space-y-2 py-6 mt-16">
+					<div class="-my-6 divide-y divide-pink-bubblegum/20">
+						<div class="space-y-4 py-6 mt-16">
 							{
 								menuMain.map((item) => (
 									<a
 										x-on:click="open = false"
 										href={item.url}
-										class={`block py-2 text-center font-semibold text-3xl ${pathname === item.url ? "menu-item-active" : ""}`}
-									>
+										class={`
+                                            block py-3 text-center font-bold text-3xl transition
+                                            ${pathname === item.url ? 'text-bubblegum-pink bg-yellow-pastel/50 rounded-lg' : 'text-barbie-pink hover:text-bubblegum-pink'}
+                                        `}>
 										{item.name}
 									</a>
 								))
@@ -116,13 +147,43 @@ const pathname = rmTrailingSlash(Astro.url.pathname);
 	</div>
 </header>
 
+<style define:vars={colors}>
+	/* Puedes dejar este bloque vacío si no necesitas CSS puro fuera de Tailwind */
+</style>
+
 <script>
-	document.addEventListener("astro:page-load", () => {
-		const headerWrapper = document.getElementById("header-wrapper")!;
-		const setHeaderHeight = () => {
-			document.documentElement.style.setProperty("--header-height", `${headerWrapper.offsetHeight}px`);
-		};
+	import 'alpinejs'; // Asegúrate de que Alpine.js esté disponible
+
+	// Esta función es crucial para establecer la variable CSS
+	function setHeaderHeight() {
+		const headerWrapper = document.getElementById('header-wrapper');
+		if (headerWrapper) {
+			// Establece la propiedad CSS custom en el elemento root (<html>)
+			document.documentElement.style.setProperty(
+				'--header-height',
+				`${headerWrapper.offsetHeight}px`
+			);
+			// console.log('--header-height set to:', headerWrapper.offsetHeight); // Para depuración
+		}
+	}
+
+	// Ejecuta la función cuando la página se carga completamente
+	document.addEventListener('astro:page-load', () => {
+		setHeaderHeight(); // Llama la primera vez
+
+		// Recalcula la altura en caso de redimensionamiento de la ventana
+		// (por si el encabezado cambia de altura en responsive)
+		window.addEventListener('resize', setHeaderHeight);
+
+		// ¡Importante! Si el encabezado tiene transiciones o el contenido se carga dinámicamente
+		// puede que necesites un ligero retraso o un MutationObserver
+		// Por ejemplo, un pequeño retraso para asegurar que los estilos de Tailwind se han aplicado
+		setTimeout(setHeaderHeight, 100);
+	});
+
+	// Si estás usando View Transitions en Astro (que es lo más probable),
+	// astro:after-swap es un buen lugar para recalcular la altura después de la navegación.
+	document.addEventListener('astro:after-swap', () => {
 		setHeaderHeight();
-		window.addEventListener("resize", setHeaderHeight);
 	});
 </script>

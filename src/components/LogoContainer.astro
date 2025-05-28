@@ -1,14 +1,16 @@
 ---
-import { Image } from "astro:assets";
-import Logo from "~/assets/images/logo-pawstronaut.svg";
-import { siteSlogan } from "~/data/config.js";
+import { Image } from 'astro:assets';
+// Asegúrate de que la ruta de tu logo SVG sea correcta.
+// Si tu SVG contiene colores internos, podríamos necesitar ajustarlos en el propio SVG o con CSS.
+
+import { siteSlogan } from '~/data/config.js';
 ---
 
 <div class="flex items-center gap-2 lg:gap-6">
-	<Logo class="w-auto h-8 lg:h-12" />
-
 	<div>
-		<h1 class="text-xl lg:text-4xl font-semibold">Pawstronaut</h1>
-		<p class="max-lg:hidden text-sm text-center italic">{siteSlogan}</p>
+		<h1 class="text-xl lg:text-4xl font-semibold text-white">Miss Bebota Py</h1>
+		<p class="max-lg:hidden text-sm text-center italic text-white">
+			{siteSlogan}
+		</p>
 	</div>
 </div>

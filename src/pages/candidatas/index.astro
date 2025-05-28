@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import CandidatasGrid from '../../components/CandidatasGrid.astro';
+import Layout from '~/layouts/Layout.astro';
+
+const candidatasRaw = await getCollection('candidatas');
+
+// Agregamos slug (sin .md) para cada candidata
+const candidatas = candidatasRaw.map((c) => ({
+	...c,
+	slug: c.id.replace(/\.md$/, ''),
+}));
+---
+
+<Layout
+	title="Candidatas - Miss Bebota Paraguay"
+	description="Conoce a las increíbles candidatas de Miss Bebota Paraguay 2024. Descubre sus historias, fotos y cómo apoyarlas en esta emocionante competencia.">
+	<div
+		class="container mx-auto px-4 mt-10 relative overflow-hidden pt-16 md:pt-24 pb-12">
+		<h1 class="text-3xl font-bold mb-6">Candidatas</h1>
+		<CandidatasGrid candidatas={candidatas} />
+	</div></Layout
+>

@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+	candidatas: CollectionEntry<'candidatas'>[];
+}
+
+const { candidatas } = Astro.props;
+---
+
+<div
+	class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 relative overflow-hidden">
+	{
+		candidatas.map(({ slug, data }) => (
+			<a
+				href={`/candidatas/${slug}`}
+				class="block overflow-hidden rounded-xl border border-purple-600 shadow-sm transition hover:shadow-md hover:border-blue-500"
+				key={slug}>
+				<img
+					src={`/images/${data.imageUrl}`}
+					alt={`${data.name} - ${data.city}`}
+					class="w-full h-60 object-cover"
+					loading="lazy"
+				/>
+
+				<div class="p-4">
+					<h2 class="text-lg font-semibold text-gray-800">{data.name}</h2>
+					<p class="text-sm text-gray-500">{data.city}</p>
+				</div>
+			</a>
+		))
+	}
+</div>

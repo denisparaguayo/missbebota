@@ -1,5 +1,7 @@
 {
-    "css.customData": [".vscode/tailwind.json"],
-    "html.format.contentUnformatted": "pre,code,textarea",
-    "html.format.unformatted": "textarea"
+	"css.customData": [".vscode/tailwind.json"],
+	"html.format.contentUnformatted": "pre,code,textarea",
+	"html.format.unformatted": "textarea",
+	"cSpell.language": "en,es-ES",
+	"cSpell.words": ["Bebota"]
 }

@@ -1,22 +1,22 @@
 export const menuMain = [
 	{
-		name: "Home",
-		url: "/",
+		name: 'Inicio',
+		url: '/',
 	},
 	{
-		name: "About Us",
-		url: "/about-us",
+		name: 'Quienes somos',
+		url: '/about-us',
 	},
 	{
-		name: "Adopt",
-		url: "/cats",
+		name: 'Inscripciones',
+		url: '/inscripciones',
 	},
 	{
-		name: "Blog",
-		url: "/blog",
+		name: 'Candidatas',
+		url: '/candidatas',
 	},
 	{
-		name: "Contact",
-		url: "/contact",
+		name: 'Ex Miss Bebotas',
+		url: '/exmissbebotas',
 	},
 ];
