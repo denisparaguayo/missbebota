@@ -16,7 +16,7 @@ export const menuMain = [
 		url: '/candidatas',
 	},
 	{
-		name: 'Ex Miss Bebotas',
-		url: '/exmissbebotas',
+		name: 'Las Reinas',
+		url: '/las-reinas',
 	},
 ];
