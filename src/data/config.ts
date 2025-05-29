@@ -2,7 +2,7 @@
 export const siteLang = 'es-ES';
 export const siteCurrency = 'PYG'; // Paraguay Guarani
 export const siteLocale = 'es-PY'; // Spanish - Paraguay
-export const siteDomain = 'missbebota.netlify.app';
+export const siteDomain = 'https://missbebota.com/';
 export const siteName = 'Miss Bebota Paraguay';
 export const siteSlogan = ' El escenario donde nace tu brillo.';
 export const themeColor = '#FF69B4';
