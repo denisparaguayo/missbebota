@@ -15,7 +15,8 @@ const pageDescription =
 	'Inscríbete en el concurso Miss Bebota Paraguay. Descubre cómo participar y qué requisitos necesitas para ser la próxima reina.';
 ---
 
-<Layout title={pageTitle} description={pageDescription}>
+<Layout title={pageTitle} description={pageDescription} image={bannerImage}>
+	{/* Banner principal con título y descripción */}
 	<section class="relative overflow-hidden pt-16 md:pt-24 pb-12 bg-black mt-10">
 		<div class="absolute inset-0"></div>
 		{/* Opacidad reducida */}
@@ -82,6 +83,14 @@ const pageDescription =
 								Contar con <strong class="text-barbie-pink"
 									>disponibilidad de tiempo</strong
 								> para las etapas de preparación y el desarrollo del concurso.
+							</p>
+						</li>
+						<li class="flex items-start">
+							<span class="text-golden-glitter text-2xl mr-3 mt-1">💫</span>
+							<p class="leading-relaxed">
+								<strong class="text-barbie-pink"
+									>No es necesario contar con cirugías estéticas</strong
+								> Valoramos la autenticidad y la diversidad de belleza natural.
 							</p>
 						</li>
 					</ul>

@@ -1,4 +1,8 @@
 ---
+//las imagenes de la galería se cargan de forma dinámica desde el componente GaleriaCandidata.astro, para cada candidata si existe una carpeta específica para sus imágenes debe de tener el nombre del slug de la candidata ej: juana-sofia en ella debe haber al menos una imagen con extensión jpg, jpeg, png o webp
+
+// la imagen principal de la candidata se carga desde el campo imageUrl del archivo markdown de la candidata, este debe de estar en la carpeta images/candidatas/ y debe de tener el mismo nombre que el slug de la candidata, por ejemplo si el slug es juana-sofia entonces la imagen debe ser juana-sofia1.jpg o juana-sofia2.png etc.
+
 import { getCollection } from 'astro:content';
 import GaleriaCandidata from '~/components/GaleriaCandidata.astro';
 import Sponsor from '~/components/sponsor.astro';
@@ -20,9 +24,13 @@ if (!candidata) {
 }
 
 const { data, body } = candidata;
+const socialImage = `/images/candidatas/${data.imageUrl}`;
 ---
 
-<Layout title={`${data.name} - ${data.city}`} description={data.description}>
+<Layout
+	title={`${data.name} - ${data.city}`}
+	description={data.description}
+	image={socialImage}>
 	<section class="container px-4 mb-10 relative overflow-hidden pt-16">
 		<div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
 			<!-- Imagen -->
