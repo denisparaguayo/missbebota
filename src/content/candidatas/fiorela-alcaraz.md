@@ -2,7 +2,7 @@
 id: 3
 name: Fiorela Alcaraz
 age: 23
-city: San Lorenzo
+city: San Juan Bautista Misiones
 description: Estudiante de Derecho.
 imageUrl: miss-bebota-2.jpg
 instagram: fioalcaraz19_ofic
