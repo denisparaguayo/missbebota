@@ -36,7 +36,9 @@ const colors = {
 					<a href="/" class="relative z-10 flex-shrink-0">
 						<LogoContainer />
 					</a>
+
 					<div class="flex lg:hidden">
+						<p>menu 🔥{''}</p>
 						<button
 							type="button"
 							class="-m-2.5 inline-flex items-center justify-center p-2.5 text-barbie-pink"
@@ -84,6 +86,7 @@ const colors = {
 		</div>
 
 		{/* Mobile menu, show/hide based on menu state. */}
+
 		<div
 			class="lg:hidden"
 			x-ref="dialog"
@@ -103,6 +106,7 @@ const colors = {
 				x-cloak>
 				<div class="flex items-center justify-between">
 					<LogoContainer />
+
 					<button
 						type="button"
 						class="-m-2.5 p-2.5 text-barbie-pink"
