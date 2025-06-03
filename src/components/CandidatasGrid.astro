@@ -8,22 +8,30 @@ interface Props {
 const { candidatas } = Astro.props;
 ---
 
-<div
-	class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 relative overflow-hidden">
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 relative overflow-hidden">
 	{
 		candidatas.map(({ slug, data }) => (
 			<a
 				href={`/candidatas/${slug}`}
-				class="block overflow-hidden rounded-xl border border-purple-600 shadow-sm transition hover:shadow-md hover:border-blue-500"
+				class="group block overflow-hidden rounded-xl border border-purple-600 shadow-sm transition hover:shadow-md hover:border-blue-500"
 				key={slug}>
-				<img
-					src={`/images/candidatas/${data.imageUrl}`}
-					alt={`${data.name} - ${data.city}`}
-					class="w-full h-60 object-cover"
-					loading="lazy"
-				/>
+				
+				<div class="relative w-full h-60">
+					<img
+						src={`/images/candidatas/${data.imageUrl}`}
+						alt={`${data.name} - ${data.city}`}
+						class="w-full h-full object-cover"
+						loading="lazy"
+					/>
+					
+					<!-- Corazón al hacer hover -->
+					<div
+						class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+						<span class="text-white text-6xl drop-shadow-lg">❤️</span>
+					</div>
+				</div>
 
-				<div class="p-4">
+				<div class="p-4 bg-white">
 					<h2 class="text-lg font-semibold text-gray-800">{data.name}</h2>
 					<p class="text-sm text-gray-500">{data.city}</p>
 				</div>

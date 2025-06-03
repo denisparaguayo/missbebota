@@ -4,6 +4,7 @@
 // la imagen principal de la candidata se carga desde el campo imageUrl del archivo markdown de la candidata, este debe de estar en la carpeta images/candidatas/ y debe de tener el mismo nombre que el slug de la candidata, por ejemplo si el slug es juana-sofia entonces la imagen debe ser juana-sofia1.jpg o juana-sofia2.png etc.
 
 import { getCollection } from 'astro:content';
+import CtaQueres from '~/components/CtaQueres.astro';
 import GaleriaCandidata from '~/components/GaleriaCandidata.astro';
 import Sponsor from '~/components/sponsor.astro';
 import Layout from '~/layouts/Layout.astro';
@@ -83,6 +84,7 @@ const socialImage = `/images/candidatas/${data.imageUrl}`;
 					class="inline-block px-5 py-2 bg-[--goldenGlitter] text-gray-800 rounded-md hover:bg-gray-300 transition text-sm text-center mx-auto mt-8">
 					← Volver
 				</a>
+				<CtaQueres />
 			</div>
 		</div>
 		<!-- Galería -->
