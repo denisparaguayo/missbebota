@@ -1,12 +1,12 @@
 ---
 id: 21
-name: Aracely Benitez
+name: Ara Benítez
 age: 21
 city: Ñemby
 description: Pasatiempo Ver peliculas
 imageUrl: aracely-benitez.jpg
 instagram: bntez_arita
-voteLink: https://www.instagram.com/p/C7Z9fK8L4W3/
+voteLink: https://www.instagram.com/p/DLMQVUIsPwS/
 isFeatured: true
 carpeta: aracely-benitez
 ---

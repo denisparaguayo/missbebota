@@ -4,10 +4,9 @@ name: Abi Bareiro
 age: 25
 city: Asunción
 description: Me gusta bailar, Ser mami presente, compartir con amistades
-
 imageUrl: abi-bareiro.jpg
-instagram: Abi_bareiro
-voteLink: https://www.instagram.com/p/C7Z9fK8L4W3/
+instagram: abi_bareiro
+voteLink: https://www.instagram.com/p/DLMOZu1M0sy/
 isFeatured: true
 carpeta: abi-bareiro
 ---
