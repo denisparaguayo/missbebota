@@ -13,7 +13,7 @@ const { candidatas } = Astro.props;
 	{
 		candidatas
 			.slice() // crea una copia del array original
-			.reverse() // invierte el orden: lo último va primero
+			// invierte el orden: lo último va primero
 			.map(({ slug, data }) => (
 				<a
 					href={`/candidatas/${slug}`}
