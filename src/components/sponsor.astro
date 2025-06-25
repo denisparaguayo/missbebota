@@ -12,7 +12,9 @@ const logos: Record<string, ImageMetadata> = import.meta.glob(
 ---
 
 <section class="mt-20 border-t pt-10 bg-black pb-10">
-	<h2 class="text-2xl font-semibold text-center mb-6">Nuestros Sponsors</h2>
+	<h2 class="text-2xl font-semibold text-center text-creamy-white mb-6">
+		Nuestros Sponsors
+	</h2>
 	<div
 		class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center justify-items-center container mx-auto px-4 sm:px-6 lg:px-8">
 		{
@@ -20,7 +22,7 @@ const logos: Record<string, ImageMetadata> = import.meta.glob(
 				<img
 					src={logo.src}
 					alt="Sponsor"
-					class="h-16 object-contain opacity-80 hover:opacity-100 transition grayscale hover:grayscale-0 "
+					class="h-20 w-32 object-contain opacity-80 hover:opacity-100 transition grayscale hover:grayscale-0"
 					loading="lazy"
 				/>
 			))
